@@ -19,16 +19,18 @@ Feature: Web steps demonstration
   Scenario: Simple form steps
     Given I am on the form page
     When I fill in "Name" with "my name"
-    #And I fill in "Name" with:
-    #"""
-    #text area
-    #"""
+    And I fill in "Describe yourself" with:
+    """
+    this usefull
+    for textareas
+    """
     And I select "Male" from "Sex"
     And I check "Accept user agrement"
     And I uncheck "Send me letters"
     And I choose "radio 1"
     And I attach the file "avatar.png" to "Avatar"
     Then the "Name" field should contain "my name"
+    And the "Describe yourself" field should contain "this usefull\nfor textareas"
     #And the "Name" field should not contain "not my name" --> failing in 1.9.2
     And the "Accept user agrement" checkbox should be checked
     And the "Do not touch me" checkbox should not be checked

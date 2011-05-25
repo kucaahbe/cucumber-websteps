@@ -1,10 +1,15 @@
 # Use this to fill in an entire form with data from a table. Example:
 #
 #   When I fill in the following:
-#     | Account Number | 5002       |
-#     | Expiry date    | 2009-11-01 |
-#     | Note           | Nice guy   |
-#     | Wants Email?   |            |
+#     | Account Number                  | 5002       |
+#     | Expiry date                     | 2009-11-01 |
+#     | Note                            | Nice guy   |
+#     | Wants Email?                    |            |
+#     | Sex                  (select)   | Male       |
+#     | Accept user agrement (checkbox) | check      |
+#     | Send me letters      (checkbox) | uncheck    |
+#     | radio 1              (radio)    | choose     |
+#     | Avatar               (file)     | avatar.png |
 #
 When /^(?:|I )fill in the following:$/ do |fields|
 
@@ -37,6 +42,10 @@ When /^(?:|I )fill in the following:$/ do |fields|
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
+  fill_in(field, :with => value)
+end
+
+When /^(?:|I )fill in "([^"]*)" with:$/ do |field, value|
   fill_in(field, :with => value)
 end
 
