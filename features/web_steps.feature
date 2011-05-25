@@ -48,7 +48,6 @@ Feature: Web steps demonstration
       | Send me letters      (checkbox) | uncheck    |
       | radio 1              (radio)    | choose     |
       | Avatar               (file)     | avatar.png |
-      # TODO filefield update
     Then the "Name" field should contain "my name"
     #And the "Name" field should not contain "not my name" --> failing in 1.9.2
     And the "Accept user agrement" checkbox should be checked

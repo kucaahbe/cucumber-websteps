@@ -56,8 +56,11 @@ When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
 end
 
-When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
-  attach_file(field, File.expand_path(path))
+When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |file, field|
+  path = File.expand_path(File.join(SUPPORT_DIR,"attachments/#{file}"))
+  raise RuntimeError, "file '#{path}' does not exists" unless File.exists?(path)
+
+  attach_file(field, path)
 end
 
 Then /^the "([^"]*)" field(?: within (.*))? should contain "([^"]*)"$/ do |field, parent, value|
