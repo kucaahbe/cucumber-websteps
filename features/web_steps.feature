@@ -15,3 +15,33 @@ Feature: Web steps demonstration
     When  I go to the other page
     Then  I should be redirected to the congratulations page
     And   I should see "You was really redirected!"
+
+  Scenario: Simple form steps
+    Given I am on the form page
+    When I fill in "Name" with "my name"
+    And I select "Male" from "Sex"
+    And I check "Accept user agrement"
+    And I uncheck "Send me letters"
+    And I choose "radio 1"
+    And I attach the file "avatar.png" to "Avatar"
+    Then the "Name" field should contain "my name"
+    And the "Name" field should not contain "not my name"
+    And the "Accept user agrement" checkbox should be checked
+    And the "Do not touch me" checkbox should not be checked
+    #And the radio should be selected
+    #And selectbox should contain
+    When I press "Submit"
+    Then I should see "Form updated!"
+
+  Scenario: Massive form filling
+    Given I am on the form page
+    When I fill in the following:
+      | Name | my name |
+    Then the "Name" field should contain "my name"
+    And the "Name" field should not contain "not my name"
+    And the "Accept user agrement" checkbox should be checked
+    And the "Do not touch me" checkbox should not be checked
+    #And the radio should be selected
+    #And selectbox should contain
+    When I press "Submit"
+    Then I should see "Form updated!"

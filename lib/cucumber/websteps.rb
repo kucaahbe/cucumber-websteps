@@ -10,3 +10,4 @@ require File.join(support_dir,'paths.rb')
 require File.join(support_dir,'selectors.rb')
 
 require 'cucumber/browsing_steps'
+require 'cucumber/form_steps'
