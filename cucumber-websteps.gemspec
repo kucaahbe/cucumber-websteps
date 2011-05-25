@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "cucumber-websteps"
   s.version     = Cucumber::Websteps::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.authors     = ["kucaahbe"]
+  s.email       = ["kucaahbe@ukr.net"]
+  s.homepage    = "http://github.com/kucaahbe/cucumber-websteps"
+  s.summary     = %q{Common cucumber web steps for capybara that can be used in any application}
+  s.description = s.summary
 
   s.rubyforge_project = "cucumber-websteps"
 
@@ -18,4 +18,9 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+
+  s.add_dependency  'capybara'
+  s.add_dependency 'cucumber'
+
+  s.add_development_dependency 'sinatra'
 end
