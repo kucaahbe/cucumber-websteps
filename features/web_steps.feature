@@ -36,11 +36,19 @@ Feature: Web steps demonstration
     #And selectbox should contain
     When I press "Submit"
     Then I should see "Form submited!"
+    # TODO render submit results
 
+# TODO multiple select step
   Scenario: Massive form filling
     Given I am on the form page
     When I fill in the following:
-      | Name | my name |
+      | Name                            | my name    |
+      | Sex                  (select)   | Male       |
+      | Accept user agrement (checkbox) | check      |
+      | Send me letters      (checkbox) | uncheck    |
+      | radio 1              (radio)    | choose     |
+      | Avatar               (file)     | avatar.png |
+      # TODO filefield update
     Then the "Name" field should contain "my name"
     #And the "Name" field should not contain "not my name" --> failing in 1.9.2
     And the "Accept user agrement" checkbox should be checked
@@ -48,4 +56,4 @@ Feature: Web steps demonstration
     #And the radio should be selected
     #And selectbox should contain
     When I press "Submit"
-    Then I should see "Form updated!"
+    Then I should see "Form submited!"

@@ -7,8 +7,32 @@
 #     | Wants Email?   |            |
 #
 When /^(?:|I )fill in the following:$/ do |fields|
+
+  select_tag    = /^(.+\S+)\s*(?:\(select\))$/
+  check_box_tag = /^(.+\S+)\s*(?:\(checkbox\))$/
+  radio_button  = /^(.+\S+)\s*(?:\(radio\))$/
+  file_field    = /^(.+\S+)\s*(?:\(file\))$/
+
   fields.rows_hash.each do |name, value|
-    When %{I fill in "#{name}" with "#{value}"}
+    case name
+    when select_tag
+      When %(I select "#{value}" from "#{$1}")
+    when check_box_tag
+      case value
+      when 'check'
+	When %(I check "#{$1}")
+      when 'uncheck'
+	When %(I uncheck "#{$1}")
+      else
+	raise 'checkbox values: check|uncheck!'
+      end
+    when radio_button
+      When %{I choose "#{$1}"}
+    when file_field
+      When %{I attach the file "#{value}" to "#{$1}"}
+    else
+      When %{I fill in "#{name}" with "#{value}"}
+    end
   end
 end
 
