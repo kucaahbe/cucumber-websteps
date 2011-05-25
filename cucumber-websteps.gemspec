@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "cucumber-websteps/version"
+require "cucumber/websteps/version"
 
 Gem::Specification.new do |s|
   s.name        = "cucumber-websteps"
