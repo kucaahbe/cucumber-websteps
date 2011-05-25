@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["kucaahbe"]
   s.email       = ["kucaahbe@ukr.net"]
   s.homepage    = "http://github.com/kucaahbe/cucumber-websteps"
-  s.summary     = %q{Common cucumber web steps for capybara that can be used in any application}
+  s.summary     = %q{Common cucumber web steps for capybara that can be used in any application(blackjack and hookers included)}
   s.description = s.summary
 
   s.rubyforge_project = "cucumber-websteps"
@@ -19,8 +19,9 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency  'capybara'
+  s.add_dependency 'capybara'
   s.add_dependency 'cucumber'
+  s.add_dependency 'launchy'
 
   s.add_development_dependency 'sinatra'
 end
