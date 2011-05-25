@@ -1,0 +1,3 @@
+<% %w(selenium rack_test).each do |config| %>
+<%= config %>: -r features/setup/<%= config %>.rb -r features/support -r features/step_definitions features
+<% end %>

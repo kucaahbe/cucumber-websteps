@@ -3,9 +3,13 @@ require 'cucumber'
 require 'cucumber/rake/task'
 Bundler::GemHelper.install_tasks
 
+task :default => ['examples:rack_test','examples:selenium']
 
-task :default => :examples
-
-Cucumber::Rake::Task.new(:examples) do |t|
-  t.cucumber_opts = "--format pretty"
+namespace :examples do
+  Cucumber::Rake::Task.new(:selenium) do |t|
+    t.profile='selenium'
+  end
+  Cucumber::Rake::Task.new(:rack_test) do |t|
+    t.profile='rack_test'
+  end
 end
