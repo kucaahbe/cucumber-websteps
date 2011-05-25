@@ -3,7 +3,7 @@ Feature: Web steps demonstration
   As awesome developer
   I should have awesome web steps predefined for awesome me
 
-  Scenario: Simple browsing steps copy-pasted (and maybe improved) form cucumber-rails generator
+  Scenario: Simple browsing steps copy-pasted (and maybe improved) from cucumber-rails generator
     Given I am on the home page
     When  I follow "some link"
     Then  I should be on the congratulations page
