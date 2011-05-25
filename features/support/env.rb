@@ -5,3 +5,6 @@ require 'capybara/cucumber'
 require 'capybara/session'
 Capybara.app = TestApp
 Capybara.default_selector = :css
+
+require 'minitest/unit'
+World(MiniTest::Assertions)
