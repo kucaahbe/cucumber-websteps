@@ -19,16 +19,6 @@
 #
 
 
-require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
-require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "selectors"))
-
-module WithinHelpers
-  def with_scope(locator)
-    locator ? within(*selector_for(locator)) { yield } : yield
-  end
-end
-World(WithinHelpers)
-
 # Single-line step scoper
 When /^(.*) within ([^:]+)$/ do |step, parent|
   with_scope(parent) { When step }
@@ -55,8 +45,4 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   else
     assert_equal expected_params, actual_params
   end
-end
-
-Then /^show me the page$/ do
-  save_and_open_page
 end

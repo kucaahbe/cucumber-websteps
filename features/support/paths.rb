@@ -14,7 +14,8 @@ module NavigationHelpers
       '/congratulations'
     when /^the other page$/
       '/other/page'
-
+    when /^the form page$/
+      '/form/page'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

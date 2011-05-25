@@ -16,6 +16,14 @@ class TestApp < Sinatra::Base
     redirect to('/congratulations?redirected=true')
   end
 
+  get '/form/page' do
+    erb :form
+  end
+
+  get '/form/submit' do
+    'Form submited!'
+  end
+
 end
 
 TestApp.run! unless defined?(Cucumber)
