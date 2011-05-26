@@ -9,5 +9,10 @@ World(Capybara)
 Capybara.app = TestApp
 Capybara.default_selector = :css
 
-require 'minitest/unit'
-World(MiniTest::Assertions)
+begin
+  require 'minitest/unit'
+  World(MiniTest::Assertions)
+rescue LoadError
+  require 'test/unit'
+  World(Test::Unit::Assertions)
+end
