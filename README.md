@@ -15,33 +15,9 @@ Description
 * [launchy](http://rubygems.org/gems/launchy) included :)
 * blackjack and hookers  ;)
 
-Install
--------
+[Install](http://relishapp.com/kucaahbe/cucumber-websteps)
+----------------------------------------------------------
 
-1. install gem
+and enjoy!
 
-   run in console:
-
-       [sudo] gem install cucumber-websteps
-
-   or add to Gemfile:
-
-       gem 'cucumber-websteps'
-
-2. setup in application
-
-   if you are using rails, then you already <b>have (and know about)</b> following files:
-
-   <b>features/support/paths.rb</b>
-
-   <b>features/support/selectors.rb</b>
-
-   they should be as they is, if you do not have these files or don't know what they are then just add them with [this content](http://gist.github.com/993837)
-   <script src="https://gist.github.com/993837.js?file=paths.rb"></script>
-   <script src="https://gist.github.com/993837.js?file=selectors.rb"></script>
-   and replace (or add) <b>features/step_definitions/web_steps.rb</b> with [this content](http://gist.github.com/993837#file_web_steps.rb)
-   <script src="https://gist.github.com/993837.js?file=web_steps.rb"></script>
-
-3. run your features!
-
-TODO: add footer
+![Steps:)](http://github.com/kucaahbe/cucumber-websteps/raw/master/steps.jpg)
