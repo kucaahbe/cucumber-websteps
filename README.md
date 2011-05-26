@@ -24,7 +24,7 @@ Install
 
        [sudo] gem install cucumber-websteps
 
-    or add to Gemfile:
+   or add to Gemfile:
 
        gem 'cucumber-websteps'
 
