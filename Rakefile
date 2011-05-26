@@ -3,7 +3,8 @@ require 'cucumber'
 require 'cucumber/rake/task'
 Bundler::GemHelper.install_tasks
 
-task :default => ['examples:rack_test','examples:selenium']
+task :default => ['examples:rack_test']
+#task :default => ['examples:rack_test','examples:selenium']
 
 namespace :examples do
   Cucumber::Rake::Task.new(:selenium) do |t|
