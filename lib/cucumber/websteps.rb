@@ -1,11 +1,12 @@
 require 'uri'
 require 'cgi'
 
-features_dir = caller.first.split('/')
-2.times { features_dir.pop }
-SUPPORT_DIR = File.join(features_dir,'support')
+unless defined?(SUPPORT_DIR)
+  features_dir = caller.select { |path| path =~ /features/ }.first.split('/')
+  2.times { features_dir.pop }
+  SUPPORT_DIR = File.join(features_dir,'support')
+end
 
-# TODO add error handling if paths or selectors do not exist
 require File.join(SUPPORT_DIR,'paths.rb')
 require File.join(SUPPORT_DIR,'selectors.rb')
 
@@ -16,6 +17,7 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
-require 'cucumber/browsing_steps'
-require 'cucumber/form_steps'
-require 'cucumber/debug_steps'
+require 'cucumber/websteps/step_scoper'
+require 'cucumber/websteps/browsing_steps'
+require 'cucumber/websteps/form_steps'
+require 'cucumber/websteps/debug_steps'
