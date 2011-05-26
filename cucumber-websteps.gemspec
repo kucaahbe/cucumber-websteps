@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["kucaahbe"]
   s.email       = ["kucaahbe@ukr.net"]
-  s.homepage    = "http://github.com/kucaahbe/cucumber-websteps"
+  s.homepage    = "http://relishapp.com/kucaahbe/cucumber-websteps"
   s.summary     = %q{Common cucumber web steps for capybara that can be used in any application(blackjack and hookers included)}
   s.description = s.summary
 
