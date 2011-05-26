@@ -23,3 +23,7 @@
 <p>
 <strong>radio:</strong> <%= params[:radio] %>
 </p>
+
+<p>
+<strong>Your favorite colors:</strong> <%= (params[:colors]||[]).join(',') %>
+</p>

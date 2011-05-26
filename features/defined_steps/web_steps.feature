@@ -39,16 +39,27 @@ Feature: Web steps demonstration
       | red    |
       | green  |
       | yellow |
-    #When I select following from "Your favorite colors"
-      #| red   |
-      #| blue  |
-      #| green |
+      | blue  |
+    When I select following values from "Your favorite colors":
+      | red   |
+      | blue  |
+      | green |
+    And I unselect following values from "Your favorite colors":
+      | green |
     Then the "Name" field should contain "my name"
     And the "Describe yourself" field should contain "this usefull\nfor textareas"
     #And the "Name" field should not contain "not my name" --> failing in 1.9.2
     And the "Accept user agrement" checkbox should be checked
     And the "Do not touch me" checkbox should not be checked
     #And the radio should be selected
+    And the following values should be selected in "Your favorite colors":
+      | red   |
+      | blue  |
+    And the following values should not be selected in "Your favorite colors":
+      | black  |
+      | white  |
+      | green  |
+      | yellow |
     When I press "Submit"
     Then I should see "Form submited!"
     And I should see "Name: my name"
@@ -57,6 +68,7 @@ Feature: Web steps demonstration
     And I should see "Accepted user agrement: Yes"
     And I should see "Like spam? No"
     And I should see "radio: radio 1"
+    And I should see "Your favorite colors: red,blue"
     #And I should see "TODO something with avatar"
 
   Scenario: Massive form filling

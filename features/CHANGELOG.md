@@ -23,4 +23,8 @@
   * 'I attach file' step will raise exception if file not found and will search file in features/support/attachments
   * improved 'I should see //...' step to add options to regexp
 * added 'I should be redirected to' step(but not finished)
+* added 'I select following values'
+* added 'I unselect following values'
 * added 'the select "select" should have following options'
+* added 'the following values should be selected'
+* added 'the following values should not be selected'

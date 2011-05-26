@@ -138,3 +138,73 @@ Then /^the select "([^"]*)" should have following options:$/ do |field, options|
     assert_equal options, actual_options
   end
 end
+
+When /^(?:I|i) select following values from "([^"]*)":$/ do |field, values|
+  values = values.transpose.raw
+  if values.size > 1
+    raise 'table should have only one column in this step!'
+  else
+    values = values.first
+  end
+
+  values.each do |value|
+    select(value, :from => field)
+  end
+end
+
+When /^(?:I|i) unselect following values from "([^"]*)":$/ do |field, values|
+  values = values.transpose.raw
+  if values.size > 1
+    raise 'table should have only one column in this step!'
+  else
+    values = values.first
+  end
+
+  values.each do |value|
+    unselect(value, :from => field)
+  end
+end
+
+Then /^the following values should be selected in "([^"]*)":$/ do |select_box, values|
+  values = values.transpose.raw
+  if values.size > 1
+    raise 'table should have only one column in this step!'
+  else
+    values = values.first
+  end
+
+  select_box=find_field(select_box)
+  unless select_box['multiple']
+    raise "this is not multiple select box!"
+  else
+    values.each do |value|
+      if select_box.respond_to?(:should)
+	select_box.value.should include(value)
+      else
+	assert select_box.value.include?(value)
+      end
+    end
+  end
+end
+
+Then /^the following values should not be selected in "([^"]*)":$/ do |select_box, values|
+  values = values.transpose.raw
+  if values.size > 1
+    raise 'table should have only one column in this step!'
+  else
+    values = values.first
+  end
+
+  select_box=find_field(select_box)
+  unless select_box['multiple']
+    raise "this is not multiple select box!"
+  else
+    values.each do |value|
+      if select_box.respond_to?(:should)
+	select_box.value.should_not include(value)
+      else
+	assert !select_box.value.include?(value)
+      end
+    end
+  end
+end
