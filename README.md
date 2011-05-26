@@ -36,10 +36,10 @@ Install
 
    <b>features/support/selectors.rb</b>
 
-   they should be as they is, if you do not have these files or don't know what they are then just add them with [this content](http://gist.github.com/993837):
+   they should be as they is, if you do not have these files or don't know what they are then just add them with [this content](http://gist.github.com/993837)
    <script src="https://gist.github.com/993837.js?file=paths.rb"></script>
    <script src="https://gist.github.com/993837.js?file=selectors.rb"></script>
-   and replace (or add) <b>features/step_definitions/web_steps.rb</b> with following content:
+   and replace (or add) <b>features/step_definitions/web_steps.rb</b> with [this content](http://gist.github.com/993837#file_web_steps.rb)
    <script src="https://gist.github.com/993837.js?file=web_steps.rb"></script>
 
 3. run your features!
