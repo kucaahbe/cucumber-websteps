@@ -28,3 +28,5 @@
 * added 'the select "select" should have following options'
 * added 'the following values should be selected'
 * added 'the following values should not be selected'
+* added 'I should see 2 elements kind of ...'
+* added 'I should not see elements kind of ...'

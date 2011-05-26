@@ -61,3 +61,22 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
     assert_equal path_to(page_name), current_path
   end
 end
+
+Then /^I should see (\d+) elements? kind of (.+)$/ do |count, locator|
+  actual_count = all(selector_for(locator)).count
+  count = count.to_i
+
+  if actual_count.respond_to?(:should)
+    actual_count.should eq(count)
+  else
+    assert_equal count, actual_count
+  end
+end
+
+Then /^I should not see elements? kind of (.+)$/ do |locator|
+  if defined?(RSpec)
+    page.should_not have_css(selector_for(locator))
+  else
+    assert page.has_no_css?(selector_for(locator))
+  end
+end

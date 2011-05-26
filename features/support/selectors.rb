@@ -10,6 +10,10 @@ module HtmlSelectorsHelpers
 
     when "the page"
       "html > body"
+    when "table's header"
+      "table > tr th"
+    when /^paragraphs?$/
+      "p"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

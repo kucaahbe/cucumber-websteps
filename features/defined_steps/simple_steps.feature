@@ -16,6 +16,12 @@ Feature: Simple browsing steps
     And   I should see /great/i
     And   I should not see /bla-bla/
 
+    When  I go to the home page
+    Then  I should see 2 elements kind of table's header
+    And   I should see 6 elements kind of "table tr"
+    And   I should not see elements kind of paragraphs
+    And   I should not see elements kind of "div.some_class"
+
     When  I go to the other page
     Then  I should be redirected to the congratulations page
     And   I should see "You was really redirected!"
