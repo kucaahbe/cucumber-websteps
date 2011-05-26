@@ -24,23 +24,41 @@ Feature: Web steps demonstration
     this usefull
     for textareas
     """
-    And I select "Male" from "Sex"
+    Then the select "Sex" should have following options:
+      |        |
+      | Female |
+      | Male   |
+    When I select "Male" from "Sex"
     And I check "Accept user agrement"
     And I uncheck "Send me letters"
     And I choose "radio 1"
     And I attach the file "avatar.png" to "Avatar"
+    Then the select "Your favorite colors" should have following options:
+      | black  |
+      | white  |
+      | red    |
+      | green  |
+      | yellow |
+    #When I select following from "Your favorite colors"
+      #| red   |
+      #| blue  |
+      #| green |
     Then the "Name" field should contain "my name"
     And the "Describe yourself" field should contain "this usefull\nfor textareas"
     #And the "Name" field should not contain "not my name" --> failing in 1.9.2
     And the "Accept user agrement" checkbox should be checked
     And the "Do not touch me" checkbox should not be checked
     #And the radio should be selected
-    #And selectbox should contain
     When I press "Submit"
     Then I should see "Form submited!"
-    # TODO render submit results
+    And I should see "Name: my name"
+    And I should see "About me: this usefull for textareas"
+    And I should see "Sex: Male"
+    And I should see "Accepted user agrement: Yes"
+    And I should see "Like spam? No"
+    And I should see "radio: radio 1"
+    #And I should see "TODO something with avatar"
 
-# TODO multiple select step
   Scenario: Massive form filling
     Given I am on the form page
     When I fill in the following:

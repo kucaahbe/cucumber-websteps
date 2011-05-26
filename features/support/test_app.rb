@@ -21,7 +21,7 @@ class TestApp < Sinatra::Base
   end
 
   get '/form/submit' do
-    'Form submited!'
+    erb :form_result
   end
 
 end

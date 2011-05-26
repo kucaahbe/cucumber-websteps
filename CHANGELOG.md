@@ -20,5 +20,7 @@
 	      | Send me letters      (checkbox) | uncheck    |
 	      | radio 1              (radio)    | choose     |
 	      | Avatar               (file)     | avatar.png |
-  * added 'I should be redirected to' step
   * 'I attach file' step will raise exception if file not found and will search file in features/support/attachments
+  * improved 'I should see //...' step to add options to regexp
+* added 'I should be redirected to' step(but not finished)
+* added 'the select "select" should have following options'

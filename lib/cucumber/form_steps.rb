@@ -121,3 +121,20 @@ end
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
+
+Then /^the select "([^"]*)" should have following options:$/ do |field, options|
+  options = options.transpose.raw
+  if options.size > 1
+    raise 'table should have only one column in this step!'
+  else
+    options = options.first
+  end
+
+  actual_options = find_field(field).all('option').map { |option| option.text }
+
+  if options.respond_to?(:should)
+    options.should eq(actual_options)
+  else
+    assert_equal options, actual_options
+  end
+end

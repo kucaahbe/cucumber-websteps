@@ -1,0 +1,25 @@
+<h1>Form submited!</h1>
+
+<p>
+<strong>Name:</strong> <%= params[:name] %>
+</p>
+
+<p>
+<strong>About me:</strong> <%= params[:description] %>
+</p>
+
+<p>
+<strong>Sex:</strong> <%= params[:sex] %>
+</p>
+
+<p>
+<strong>Accepted user agrement:</strong> <%= params[:agrement]=="1" ? 'Yes' : 'No' %>
+</p>
+
+<p>
+<strong>Like spam?</strong> <%= params[:spam]=="1" ? 'Yes' : 'No' %>
+</p>
+
+<p>
+<strong>radio:</strong> <%= params[:radio] %>
+</p>
