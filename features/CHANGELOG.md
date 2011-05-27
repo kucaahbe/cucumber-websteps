@@ -1,3 +1,8 @@
+0.9.2
+-----
+
+* TODO: add steps to work with tables
+
 0.9.1
 -----
 
