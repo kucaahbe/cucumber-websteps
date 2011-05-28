@@ -1,3 +1,14 @@
-<% %w(selenium rack_test).each do |config| %>
-<%= config %>: -r features/setup/<%= config %>.rb -r features/support -r features/step_definitions features
+<% %w(selenium rack_test).each do |profile| %>
+<%
+  common_opts = "-r features/support -r features/profiles/#{profile}.rb -r features/step_definitions features"
+  begin
+    require 'test/unit'
+    require_test_unit = "-r 'test/unit'"
+  rescue LoadError
+    require_test_unit = "-r 'minitest/unit'"
+  end
+  require_rspec="TODO"
+%>
+<%= profile %>_test_unit: <%= require_test_unit %> <%= common_opts %>
+#<%= profile %>_rspec: <%= require_rspec %> <%= common_opts %>
 <% end %>

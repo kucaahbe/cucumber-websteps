@@ -7,22 +7,18 @@ require File.join(File.dirname(__FILE__), '..', '..', 'test/app.rb')
 require 'capybara'
 require 'capybara/cucumber'
 
-# TODO organize profiles and test frameworks
-#require 'rspec'
-begin
-  require 'minitest/unit'
-  World(MiniTest::Assertions)
-rescue LoadError
-  require 'test/unit'
-  World(Test::Unit::Assertions)
-end
-
 Capybara.app = TestApp
 
 class TestAppWorld
   include Capybara
   #include RSpec::Expectations
   #include RSpec::Matchers
+  # TODO add rspec
+  begin
+    include MiniTest::Assertions
+  rescue NameError
+    include Test::Unit::Assertions
+  end
 end
 
 World do
