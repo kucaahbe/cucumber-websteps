@@ -24,4 +24,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'launchy'
 
   s.add_development_dependency 'sinatra'
+  s.add_development_dependency 'cucumber-sinatra'
 end

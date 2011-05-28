@@ -1,7 +1,7 @@
 require 'sinatra/base'
 class TestApp < Sinatra::Base
 
-  set :views, File.dirname(__FILE__) + '/test_app_views'
+  set :views, File.dirname(__FILE__) + '/views'
 
   get '/' do
     erb :home
@@ -25,5 +25,3 @@ class TestApp < Sinatra::Base
   end
 
 end
-
-TestApp.run! unless defined?(Cucumber)
