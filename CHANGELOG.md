@@ -1,13 +1,14 @@
-0.9.2
------
+Unreleased
+----------
 
 * TODO: add steps to work with tables
-
-0.9.1
------
-
 * TODO: added 'about disabled form fields'
 * TODO: handle disabled form fields
+
+0.10.0(unreleased to rubygems, but in master branch)
+----------------------------------------------------
+
+* fixed cucumber i18n deprecation warning
 
 0.9.0
 -----
