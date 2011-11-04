@@ -1,6 +1,11 @@
 Cucumber web steps [![Build Status](http://travis-ci.org/kucaahbe/cucumber-websteps.png)](http://travis-ci.org/kucaahbe/cucumber-websteps)
 ==========================================================================================================================================
 
+Attention!!!
+Before you start, please read [this](http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off)
+this gem just collected common browsing step, just to prevent you from repeating self by writing every time this steps in every your project.
+Write your own steps, use this steps if you <strong>really</strong> need to write in scenario "When I click ..."
+
 Description
 -----------
 
