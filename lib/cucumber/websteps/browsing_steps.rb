@@ -12,7 +12,7 @@ end
 
 Then /^I should be redirected to (.+)$/ do |page|
   puts 'TODO: make this done'
-  Then "I should be on #{page}"
+  step "I should be on #{page}"
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|

@@ -20,9 +20,10 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency 'capybara'
-  s.add_dependency 'cucumber'
+  s.add_dependency 'cucumber', '>= 1.1.1'
   s.add_dependency 'launchy'
 
   s.add_development_dependency 'sinatra'
   s.add_development_dependency 'cucumber-sinatra'
+  s.add_development_dependency 'rake'
 end

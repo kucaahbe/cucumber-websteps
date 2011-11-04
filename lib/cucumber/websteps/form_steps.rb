@@ -21,22 +21,22 @@ When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
     case name
     when select_tag
-      When %(I select "#{value}" from "#{$1}")
+      step %(I select "#{value}" from "#{$1}")
     when check_box_tag
       case value
       when 'check'
-	When %(I check "#{$1}")
+	step %(I check "#{$1}")
       when 'uncheck'
-	When %(I uncheck "#{$1}")
+	step %(I uncheck "#{$1}")
       else
 	raise 'checkbox values: check|uncheck!'
       end
     when radio_button
-      When %{I choose "#{$1}"}
+      step %{I choose "#{$1}"}
     when file_field
-      When %{I attach the file "#{value}" to "#{$1}"}
+      step %{I attach the file "#{value}" to "#{$1}"}
     else
-      When %{I fill in "#{name}" with "#{value}"}
+      step %{I fill in "#{name}" with "#{value}"}
     end
   end
 end
