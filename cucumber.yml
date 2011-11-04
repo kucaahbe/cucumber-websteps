@@ -1,14 +1,7 @@
-<% %w(selenium rack_test).each do |profile| %>
-<%
-  common_opts = "-r features/support -r features/profiles/#{profile}.rb -r features/step_definitions features"
-  begin
-    require 'test/unit'
-    require_test_unit = "-r 'test/unit'"
-  rescue LoadError
-    require_test_unit = "-r 'minitest/unit'"
-  end
-  require_rspec="TODO"
-%>
-<%= profile %>_test_unit: <%= require_test_unit %> <%= common_opts %>
-#<%= profile %>_rspec: <%= require_rspec %> <%= common_opts %>
-<% end %>
+# vim:ft=eruby
+rack_test_rspec:     -r rspec     -r features/support -r features/profiles/rack_test.rb -r features/step_definitions features
+rack_test_test_unit: -r test/unit -r features/support -r features/profiles/rack_test.rb -r features/step_definitions features
+selenium_rspec:      -r rspec     -r features/support -r features/profiles/selenium.rb  -r features/step_definitions features
+selenium_test_unit:  -r test/unit -r features/support -r features/profiles/selenium.rb  -r features/step_definitions features
+rack_test_minitest: -r minitest/unit -r features/support -r features/profiles/rack_test.rb -r features/step_definitions features
+selenium_minitest:  -r minitest/unit -r features/support -r features/profiles/selenium.rb  -r features/step_definitions features

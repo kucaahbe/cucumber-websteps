@@ -12,13 +12,15 @@ Capybara.save_and_open_page_path = File.expand_path(File.join(File.dirname(__FIL
 
 class TestAppWorld
   include Capybara
-  #include RSpec::Expectations
-  #include RSpec::Matchers
-  # TODO add rspec
-  begin
-    include MiniTest::Assertions
-  rescue NameError
-    include Test::Unit::Assertions
+  if defined?(RSpec)
+    include RSpec::Expectations
+    include RSpec::Matchers
+  else
+    begin
+      include MiniTest::Assertions
+    rescue NameError
+      include Test::Unit::Assertions
+    end
   end
 end
 
