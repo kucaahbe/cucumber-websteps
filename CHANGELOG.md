@@ -5,10 +5,11 @@ Unreleased
 * TODO: added 'about disabled form fields'
 * TODO: handle disabled form fields
 
-0.10.0(unreleased to rubygems, but in master branch)
-----------------------------------------------------
+0.10.0
+------
 
 * fixed cucumber i18n deprecation warning
+* updated capybara to >= 1.1.2
 
 0.9.0
 -----
