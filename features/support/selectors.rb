@@ -11,7 +11,7 @@ module HtmlSelectorsHelpers
     when "the page"
       "html > body"
     when "table's header"
-      "table > tr th"
+      "table tbody > tr th"
     when /^paragraphs?$/
       "p"
 
