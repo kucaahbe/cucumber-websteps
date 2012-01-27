@@ -7,7 +7,7 @@ drivers = %w(rack_test selenium)
 test_unit_framework = case RUBY_VERSION
                       when '1.8.7'
                         'test_unit'
-                      when '1.9.2'
+                      when /^1\.9\.\d/
                         'minitest'
                       end
 test_frameworks=%W(rspec #{test_unit_framework})
