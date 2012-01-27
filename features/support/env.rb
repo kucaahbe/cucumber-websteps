@@ -11,7 +11,7 @@ Capybara.app = TestApp
 Capybara.save_and_open_page_path = File.expand_path(File.join(File.dirname(__FILE__),'../../tmp'))
 
 class TestAppWorld
-  include Capybara
+  include Capybara::DSL
   if defined?(RSpec)
     include RSpec::Expectations
     include RSpec::Matchers
